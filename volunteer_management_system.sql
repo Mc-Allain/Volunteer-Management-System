@@ -1,0 +1,129 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Aug 29, 2023 at 09:16 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `volunteer_management_system`
+--
+DROP DATABASE IF EXISTS `volunteer_management_system`;
+CREATE DATABASE IF NOT EXISTS `volunteer_management_system` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `volunteer_management_system`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `administrators`
+--
+
+CREATE TABLE `administrators` (
+  `id` int(11) NOT NULL,
+  `last_name` varchar(64) NOT NULL DEFAULT 'No Last Name',
+  `first_name` varchar(64) NOT NULL DEFAULT 'No First Name',
+  `username` varchar(32) NOT NULL DEFAULT 'No Username',
+  `password` varchar(32) NOT NULL,
+  `role` enum('Super Admin','Regular Admin') NOT NULL DEFAULT 'Regular Admin',
+  `date_created` timestamp NOT NULL DEFAULT current_timestamp(),
+  `date_updated` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `administrators`
+--
+
+INSERT INTO `administrators` (`id`, `last_name`, `first_name`, `username`, `password`, `role`, `date_created`, `date_updated`) VALUES
+(1, 'Sagara', 'Makoto Aizen', 'sagara.ma', 'be7ae849b480b15e05a8c14eec9e0723', 'Super Admin', '2023-08-18 09:33:25', '2023-08-18 09:33:25'),
+(2, 'Sample Last Name', 'Sample First Name', 'default_user', '4656fd365a7b2a27efb7530bca9b9cf1', 'Regular Admin', '2023-08-29 03:52:14', '2023-08-29 03:52:14');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `auth_cookies`
+--
+
+CREATE TABLE `auth_cookies` (
+  `id` int(11) NOT NULL,
+  `cookie_value` varchar(8) NOT NULL,
+  `user_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `volunteers`
+--
+
+CREATE TABLE `volunteers` (
+  `id` int(11) NOT NULL,
+  `last_name` varchar(64) NOT NULL DEFAULT 'No Last Name',
+  `first_name` varchar(64) NOT NULL DEFAULT 'No First Name',
+  `barangay` varchar(32) NOT NULL DEFAULT 'No Barangay',
+  `city` varchar(32) NOT NULL DEFAULT 'No City',
+  `mobile_number` varchar(11) NOT NULL DEFAULT '0',
+  `email_address` varchar(64) NOT NULL DEFAULT 'No Email Address',
+  `date_created` timestamp NOT NULL DEFAULT current_timestamp(),
+  `date_updated` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `administrators`
+--
+ALTER TABLE `administrators`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `auth_cookies`
+--
+ALTER TABLE `auth_cookies`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `volunteers`
+--
+ALTER TABLE `volunteers`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `administrators`
+--
+ALTER TABLE `administrators`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `auth_cookies`
+--
+ALTER TABLE `auth_cookies`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `volunteers`
+--
+ALTER TABLE `volunteers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
