@@ -15,7 +15,7 @@
     set_page_title('Home');
 
     if (!isset($_SESSION['user_id'])) {
-        redirect('../sign_in/index.php');
+        redirect('../sign_in');
         exit;
     }
 

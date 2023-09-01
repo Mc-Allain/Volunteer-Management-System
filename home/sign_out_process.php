@@ -9,7 +9,7 @@
         // Set the cookie's expiration time to a past date
         setcookie('remember_me_cookie', '', time() - 3600, '/');
 
-        redirect('../sign_in/index.php');
+        redirect('../sign_in');
         exit;
     }
 ?>

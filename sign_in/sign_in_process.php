@@ -35,7 +35,7 @@
             }
 
             $_SESSION['user_id'] = $user_id;
-            redirect('../home/index.php');
+            redirect('../home');
         } else {
             redirect('./index.php?credentials=incorrect');
         }

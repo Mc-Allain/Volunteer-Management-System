@@ -15,7 +15,7 @@
     set_page_title('Sign in');
 
     if (isset($_SESSION['user_id'])) {
-        redirect('../home/index.php');
+        redirect('../home');
         exit;
     }
 
@@ -30,7 +30,7 @@
         $user = $Auth->get_user_using_cookie($cookie_value);
 
         if ($user !== null) {
-            redirect('../home/index.php');
+            redirect('../home');
         }
     }
 ?>
