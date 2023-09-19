@@ -29,5 +29,5 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- custom css -->
-    <link rel="stylesheet" href="./App/Assets/css/output.css">
+    <link rel="stylesheet" href="../App/Assets/css/output.css">
 </head>

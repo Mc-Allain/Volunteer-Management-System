@@ -11,7 +11,6 @@
     require_once '../App/Controllers/AuthController.php';
 
     require_once '../Components/navigations.php';
-    require_once '../Components/containers.php';
     
     set_page_title('Home');
 
@@ -32,16 +31,7 @@
 ?>
 
 <body>
-    <?= Sidebar(title: 'Volunteer Management System', abbr: 'VMS', selected_index: 0); ?>
-    <?= NavHeader(title: 'Home'); ?>
-
-    <?= NavContentStart(); ?>
-        <div class='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2'>
-            <?= DashboardItem(label: 'Volunteers', value: 0); ?>
-            <?= DashboardItem(label: 'Emergencies', value: 0); ?>
-            <?= DashboardItem(label: 'Average Volunteers per Emergency', value: 0); ?>
-            <?= DashboardItem(label: 'Emergencies in Last 7 Days', value: 0); ?>
-        </div>
-    <?= NavContentEnd(); ?>
+    <?= Sidebar(title: 'Volunteer Management System', abbr: 'VMS', selected_index: 2); ?>
+    <?= NavHeader(title: 'Emergencies'); ?>
 </body>
 </html>

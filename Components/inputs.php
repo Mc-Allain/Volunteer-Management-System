@@ -1,11 +1,11 @@
 <?php
-    function Input($type = 'text', $id = '', $name = '', $placeholder = '', $icon = '') { ?>
+    function Input($type = 'text', $id = '', $name = '', $placeholder = '', $icon = '', $class = '') { ?>
         <div class='group flex items-center gap-2 border rounded-md p-2'> <?php
                 if (!empty($icon)) { ?>
                     <i class='fas fa-<?= $icon ?> text-gray-500'></i> <?php
                 }
             ?>
-            <input type=<?= $type ?> class='border-none outline-none flex-1' id=<?= $id ?> name=<?= $name ?> placeholder=<?= $placeholder ?> >
+            <input type=<?= $type ?> class='border-none outline-none flex-1 <?= $class ?>' id=<?= $id ?> name=<?= $name ?> placeholder=<?= $placeholder ?> >
         </div> <?php
     }
 

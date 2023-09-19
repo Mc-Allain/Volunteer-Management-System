@@ -1,0 +1,21 @@
+@charset "UTF-8";
+/* Hide the default checkbox */
+.styled-checkbox {
+  display: none;
+  /* Style the custom checkbox */
+  /* Style the checkmark icon */
+}
+.styled-checkbox + label {
+  display: inline-block;
+  position: relative;
+  padding-left: 25px; /* Adjust this value to move the checkmark */
+  cursor: pointer;
+}
+.styled-checkbox + label:before {
+  content: "✓"; /* Checkmark symbol */
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 18px; /* Adjust the size of the checkmark */
+  color: green; /* Change the color of the checkmark */
+}/*# sourceMappingURL=input.css.map */
