@@ -2,7 +2,7 @@
 
     function Sidebar($title = 'Sidebar', $abbr = 'SB', $selected_index = 0) { ?>
         <!-- Sidebar -->
-        <div id='sidebar' class='bg-gray-800 text-white h-screen w-[60px] lg:w-1/6 max-w-[275px] min-w-[50px] fixed left-0 top-0 flex flex-col'>
+        <div id='sidebar' class='bg-gray-800 text-white h-screen w-[65px] lg:w-1/6 max-w-[275px] min-w-[65px] fixed left-0 top-0 flex flex-col'>
             <h1 class='text-xl font-medium p-4 pb-0 hidden lg:block'><?= $title ?></h1>
             <h1 class='text-xl font-medium p-4 pb-0 block lg:hidden break-words'><?= $abbr ?></h1>
             <ul class='mt-4 text-gray-300 flex-1'>
@@ -113,8 +113,6 @@
 
                 const sidebarWidth = sidebar ? sidebar.offsetWidth : 0;
                 const navHeaderHeight = navHeader ? navHeader.offsetHeight : 0;
-
-                console.log(navContent);
                 
                 if (navContent) {
                     navContent.style.left = sidebarWidth + 'px';
