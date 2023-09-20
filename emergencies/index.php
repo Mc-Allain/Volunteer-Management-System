@@ -12,7 +12,7 @@
 
     require_once '../Components/navigations.php';
     
-    set_page_title('Home');
+    set_page_title('Emergencies');
 
     if (!isset($_SESSION['user_id'])) {
         redirect('../sign_in');
