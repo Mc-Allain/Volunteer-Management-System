@@ -13,4 +13,14 @@
     
         return $random_string;
     }
+
+    function parse_to_datatable_columns($columns) {
+        $result = [];
+
+        foreach ($columns as $key => $value) {
+            array_push($result, ['title' => $value]);
+        }
+
+        return $result;
+    }
 ?>

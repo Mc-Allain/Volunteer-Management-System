@@ -1,5 +1,8 @@
 <?php
     require_once __DIR__ .'/../Helpers/Controller.php';
+    require_once __DIR__ .'/../Assets/Carbon/autoload.php';
+
+    use Carbon\Carbon;
 
     class EmergencyController extends Controller {
         public function get_emergency_count() {
@@ -24,9 +27,12 @@
             $data = null;
             
             $query = 'SELECT COUNT(*) AS value
-                    FROM emergencies';
+                    FROM emergencies
+                    WHERE date_created >= :date_created';
 
             $this->statement = $this->connection->prepare($query);
+                    
+            $this->statement->bindValue(":date_created", Carbon::now()->subDays(7));
 
             $fetched_result = $this->execute_fetch();
             $this->end_statement();
