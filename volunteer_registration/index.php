@@ -4,19 +4,18 @@
 <?php
     session_start();
 
-    require_once './header.php';
+    require_once '../header.php';
     
-    require_once './App/Helpers/Functions.php';
-    require_once './App/Helpers/Database.php';
-    require_once './App/Controllers/AuthController.php';
+    require_once '../App/Helpers/Functions.php';
+    require_once '../App/Helpers/Database.php';
+    require_once '../App/Controllers/AuthController.php';
     
-    require_once './welcome_panel.php';
-
+    require_once './volunteer_registration_panel.php';
     
-    set_page_title('Welcome');
+    set_page_title('Sign in');
 
     if (isset($_SESSION['user_id'])) {
-        redirect('./home');
+        redirect('../home');
         exit;
     }
 
@@ -31,14 +30,14 @@
         $user = $Auth->get_user_using_cookie($cookie_value);
 
         if ($user !== null) {
-            redirect('./home');
+            redirect('../home');
         }
     }
 ?>
 
 <body>
     <div class='w-full h-[100vh] flex items-center justify-center'>
-        <?= WelcomePanel(); ?>
+        <?= VolunteerRegistrationPanel(); ?>
     </div>
 </body>
 </html>

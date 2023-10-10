@@ -33,7 +33,11 @@
 
                     <?= Checkbox(id: 'remember', name: 'remember', label: 'Remember Me'); ?>
                     
-                    <?= Button(id: 'sign_in', label: 'Sign in'); ?>
+                    <?= Button(id: 'sign_in', type:'submit', label: 'Sign in', button_class: 'primary'); ?>
+                    
+                    <?= ButtonStart(id: 'back_to_welcome', button_class: 'link'); ?>
+                        <a href='../'>Go back</a>
+                    <?= ButtonEnd(); ?>
                 </form>
             </div>
         </div> <?php
