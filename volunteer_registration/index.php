@@ -12,7 +12,7 @@
     
     require_once './volunteer_registration_panel.php';
     
-    set_page_title('Sign in');
+    set_page_title('Volunteer Registration');
 
     if (isset($_SESSION['user_id'])) {
         redirect('../home');
