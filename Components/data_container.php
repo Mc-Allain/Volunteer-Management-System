@@ -54,6 +54,11 @@
             ];
 
             new DataTable('#<?= $id ?>', options);
+            // const table = document.getElementById('<?= $id ?>');
+
+            // for (let row of table.children[1].children) {
+            //     console.log(row.children);
+            // }
         </script> <?php
     }
 ?>

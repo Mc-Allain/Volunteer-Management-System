@@ -7,7 +7,7 @@
             <div class='flex flex-col gap-4 h-full'>
                 <div class='font-medium text-xl mb-1'>Volunteer Registration</div>
 
-                <form class='flex flex-col gap-4 flex-grow'>
+                <form action='volunteer_registration_process.php' method='post' id='volunteer-registration-form' class='flex flex-col gap-4 flex-grow'>
                     <div class='flex flex-col items-center gap-4 flex-grow'>
                         <div class='flex gap-6 w-[384px]'>
                             <div class='flex flex-col gap-2 flex-grow'>

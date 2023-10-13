@@ -81,6 +81,7 @@
                         null, :last_name, :first_name,
                         :barangay, :city,
                         :mobile_number, :alt_mobile_number, :email_address,
+                        DEFAULT, DEFAULT
                     )';
 
             $this->start_statement($query);
