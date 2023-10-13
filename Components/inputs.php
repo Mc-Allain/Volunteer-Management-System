@@ -45,6 +45,8 @@
             $color_class = 'bg-red-500 hover:bg-red-600 text-white focus:ring focus:ring-red-300';
         } else if ($button_class == 'link') {
             $color_class = 'bg-white text-blue-400 hover:text-blue-500';
+        } else if ($button_class == 'link-danger') {
+            $color_class = 'bg-white text-red-400 hover:text-red-500';
         }
 
         ?>
@@ -70,6 +72,8 @@
             $color_class = 'bg-red-500 hover:bg-red-600 text-white focus:ring focus:ring-red-300';
         } else if ($button_class == 'link') {
             $color_class = 'bg-white text-blue-400 hover:text-blue-500';
+        } else if ($button_class == 'link-danger') {
+            $color_class = 'bg-white text-red-400 hover:text-red-500';
         }
 
         ?>

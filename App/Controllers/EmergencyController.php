@@ -11,7 +11,7 @@
             $query = 'SELECT COUNT(*) AS value
                     FROM emergencies';
 
-            $this->statement = $this->connection->prepare($query);
+            $this->start_statement($query);
 
             $fetched_result = $this->execute_fetch();
             $this->end_statement();
@@ -30,9 +30,9 @@
                     FROM emergencies
                     WHERE date_created >= :date_created';
 
-            $this->statement = $this->connection->prepare($query);
+            $this->start_statement($query);
                     
-            $this->statement->bindValue(":date_created", Carbon::now()->subDays(7));
+            $this->bind_value(":date_created", Carbon::now()->subDays(7));
 
             $fetched_result = $this->execute_fetch();
             $this->end_statement();

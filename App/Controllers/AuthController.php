@@ -45,10 +45,10 @@
                     FROM administrators
                     WHERE username = :username AND password = :password';
 
-            $this->statement = $this->connection->prepare($query);
+            $this->start_statement($query);
             
-            $this->statement->bindValue(":username", $username);
-            $this->statement->bindValue(":password", md5($password));
+            $this->bind_value(":username", $username);
+            $this->bind_value(":password", md5($password));
         }
 
         public function get_by_id($id) {
@@ -71,9 +71,9 @@
                     FROM administrators
                     WHERE id = :id';
 
-            $this->statement = $this->connection->prepare($query);
+            $this->start_statement($query);
             
-            $this->statement->bindValue(":id", $id);
+            $this->bind_value(":id", $id);
         }
 
         public function store_auth_cookie($request) {
@@ -82,20 +82,20 @@
 
             $query = 'INSERT INTO auth_cookies VALUES (null, :cookie_value, :user_id)';
 
-            $this->statement = $this->connection->prepare($query);
+            $this->start_statement($query);
             
-            $this->statement->bindValue(":cookie_value", $cookie_value);
-            $this->statement->bindValue(":user_id", $user_id);
+            $this->bind_value(":cookie_value", $cookie_value);
+            $this->bind_value(":user_id", $user_id);
 
             $fetched_result = $this->execute();
             $this->end_statement();
 
             $query = 'SELECT * FROM auth_cookies WHERE cookie_value = :cookie_value AND user_id = :user_id';
 
-            $this->statement = $this->connection->prepare($query);
+            $this->start_statement($query);
             
-            $this->statement->bindValue(":cookie_value", $cookie_value);
-            $this->statement->bindValue(":user_id", $user_id);
+            $this->bind_value(":cookie_value", $cookie_value);
+            $this->bind_value(":user_id", $user_id);
 
             $fetched_result = $this->execute_fetch();
             $this->end_statement();
@@ -112,9 +112,9 @@
                     FROM administrators ad, auth_cookies ac
                     WHERE ad.id = ac.user_id AND cookie_value = :cookie_value';
 
-            $this->statement = $this->connection->prepare($query);
+            $this->start_statement($query);
             
-            $this->statement->bindValue(":cookie_value", $cookie_value);
+            $this->bind_value(":cookie_value", $cookie_value);
 
             $fetched_result = $this->execute_fetch();
             $this->end_statement();

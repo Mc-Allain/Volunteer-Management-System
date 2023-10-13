@@ -24,6 +24,14 @@
             return $this->error;
         }
 
+        public function start_statement($query) {
+            $this->statement = $this->connection->prepare($query);
+        }
+
+        public function bind_value($binder, $value) {
+            $this->statement->bindValue($binder, $value);
+        }
+
         public function execute() {
             $this->statement->execute();
         }
