@@ -2,7 +2,7 @@
     function Label($name = '', $value = '', $icon = '', $tag = '', $class = '') { ?>
     <label for='<?= $name ?>' class='flex items-center gap-2 text-sm <?= $class ?>'> <?php
             if (!empty($icon)) { ?>
-                <i class='fas fa-<?= $icon ?>'></i> <?php
+                <i class='fas fa-<?= $icon ?> text-gray-500'></i> <?php
             }
         ?>
         <?= $value ?>
