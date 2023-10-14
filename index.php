@@ -34,6 +34,8 @@
             redirect('./home');
         }
     }
+    
+    unset($_SESSION['validation_results']);
 ?>
 
 <body>

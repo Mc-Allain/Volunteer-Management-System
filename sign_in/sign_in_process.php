@@ -9,12 +9,12 @@
     $Auth = new AuthController($Database);
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        if (empty($_POST['username']) || empty($_POST['password'])) {
+        if (empty(trim($_POST['username'])) || empty($_POST['password'])) {
             redirect('./index.php?credentials=incomplete');
             exit;
         }
 
-        $payload['username'] = $_POST['username'];
+        $payload['username'] = trim($_POST['username']);
         $payload['password'] = $_POST['password'];
 
         $response = $Auth->login($payload);
