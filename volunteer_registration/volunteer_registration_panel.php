@@ -51,7 +51,6 @@
                                     <?= ErrorLabel(name: 'last_name', errors: $errors); ?>
                                 <?= FormInputGroupEnd(); ?>
                                 
-
                                 <?= FormInputGroupStart(); ?>
                                     <?= Label(name: 'first_name', value: 'First Name', tag: 'required') ?>
                                     <?= Input(type: 'text', id: 'first_name', name: 'first_name', placeholder: 'First Name', icon: 'user', value: $data['first_name'], max_length: 32, errors: $errors); ?>

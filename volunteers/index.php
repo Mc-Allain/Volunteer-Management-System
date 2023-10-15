@@ -52,7 +52,6 @@
     <?= NavHeaderEnd(); ?>
 
     <?= NavContentStart(class: 'p-4 flex flex-col gap-3'); ?>
-    
         <div class='flex gap-2'>
             <a href='../messaging/'>
                 <?= Button(id: 'send_emergency_message', label: 'Send Emergency Message',  button_class: 'primary'); ?>

@@ -17,7 +17,7 @@
         ?>
         
         <div class='<?= $input_class ?> flex items-center gap-2 border rounded-md p-2'> <?php
-                if (!empty($icon)) { ?>
+                if (!empty(trim($icon))) { ?>
                     <i class='fas fa-<?= $icon ?> text-gray-500'></i> <?php
                 }
             ?>
@@ -48,7 +48,7 @@
 
     function Checkbox($id = '', $name = '', $label = '', $icon = '') { ?>
         <div class="group flex items-center gap-2 p-2"> <?php
-                if (!empty($icon)) { ?>
+                if (!empty(trim($icon))) { ?>
                     <i class='fas fa-<?= $icon ?> text-gray-500'></i> <?php
                 }
             ?>
@@ -78,7 +78,7 @@
             id=<?= $id ?> 
             class='w-full flex gap-2 justify-center items-center font-medium py-2 px-4 rounded-md text-sm focus:outline-none <?= $color_class ?> <?= $class ?>'
         > <?php
-                if (!empty($icon)) { ?>
+                if (!empty(trim($icon))) { ?>
                     <i class='fas fa-<?= $icon ?> text-white'></i> <?php
                 }
             ?>

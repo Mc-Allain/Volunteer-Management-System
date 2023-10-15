@@ -10,9 +10,11 @@
         </div> <?php
     }
 
-    function FormCategoryStart($name = 'Form Category', $class= '') { ?>
-        <div class='flex flex-col gap-3 flex-1'>
-            <div class='font-medium mb-1'><?= $name ?></div> <?php
+    function FormCategoryStart($name = '', $class= '') { ?>
+        <div class='flex flex-col gap-3 flex-1'> <?php
+            if (!empty(trim($name))) { ?>
+                <div class='font-medium mb-1'><?= $name ?></div> <?php
+            }
     }
 
     function FormCategoryEnd() { ?>
