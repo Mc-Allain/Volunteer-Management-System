@@ -61,7 +61,7 @@
 
         <?= DataTables(
             id: 'volunteers-table', 
-            class: 'cell-border compact hover order-column row-border stripe flex-1', 
+            class: 'cell-border compact hover order-column row-border stripe', 
             columns: $volunteer_fields, 
             data: $volunteers,
             column_definitions: $volunteer_field_definitions,
