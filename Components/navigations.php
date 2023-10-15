@@ -194,7 +194,7 @@
 	}
 
 	function NavContentStart($class = '') { ?>
-		<div id='nav_content' class='absolute bottom-0 right-0 overflow-y-scroll p-2 <?= $class ?>'>
+		<div id='nav_content' class='absolute bottom-0 right-0 overflow-y-auto p-2 <?= $class ?>'>
 		
 		<script>
 			const handleNavContentResize = () => {

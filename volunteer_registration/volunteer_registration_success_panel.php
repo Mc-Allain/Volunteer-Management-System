@@ -18,7 +18,7 @@
             <div class='flex flex-col justify-evenly h-full'>
                 <div class='font-medium text-xl mx-5'>Volunteer Registration</div>
 
-                <div class='flex flex-col justify-evenly items-center flex-grow px-5'>
+                <div class='flex flex-col justify-evenly items-center flex-1 px-5'>
                     <?= SuccessAlert(content: 'You\'ve successfully registered a volunteer.', class: 'w-full'); ?>
 
                     <?= LinkStart(url: '../', class: '!w-fit'); ?>

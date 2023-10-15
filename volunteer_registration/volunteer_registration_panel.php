@@ -38,11 +38,11 @@
             <div class='flex flex-col gap-4 h-full'>
                 <div class='font-medium text-xl mb-1 mx-5'>Volunteer Registration</div>
 
-                <form action='volunteer_registration_process.php' method='post' id='volunteer-registration-form' class='flex flex-col gap-4 flex-grow h-4'>
+                <form action='volunteer_registration_process.php' method='post' id='volunteer-registration-form' class='flex flex-col gap-4 flex-1 h-4'>
 
                     <?= RequiredNoteLabel(class: 'mx-5') ?>
 
-                    <div class='flex flex-col items-center gap-4 flex-grow px-5 overflow-y-auto'>
+                    <div class='flex flex-col items-center gap-4 flex-1 px-5 overflow-y-auto'>
                         <div class='flex gap-5 w-[384px]'>
                             <?= FormCategoryStart(name: 'Personal Information'); ?>
                                 <?= FormInputGroupStart(); ?>

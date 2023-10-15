@@ -11,7 +11,7 @@
     }
 
     function FormCategoryStart($name = 'Form Category', $class= '') { ?>
-        <div class='flex flex-col gap-3 flex-grow'>
+        <div class='flex flex-col gap-3 flex-1'>
             <div class='font-medium mb-1'><?= $name ?></div> <?php
     }
 
