@@ -35,8 +35,8 @@
                     
                     <?= Button(id: 'sign_in', type:'submit', label: 'Sign in', button_class: 'primary'); ?>
                     
-                    <?= ButtonStart(id: 'back_to_welcome', button_class: 'link'); ?>
-                        <a href='../'>Go back</a>
+                    <?= ButtonStart(id: 'cancel', button_class: 'link-primary'); ?>
+                        <a href='../'>Cancel</a>
                     <?= ButtonEnd(); ?>
                 </form>
             </div>

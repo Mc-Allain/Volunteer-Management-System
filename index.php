@@ -36,6 +36,7 @@
     }
     
     unset($_SESSION['validation_results']);
+    unset($_SESSION['volunteer_registration_status']);
 ?>
 
 <body>

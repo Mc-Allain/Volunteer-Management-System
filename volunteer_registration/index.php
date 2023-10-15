@@ -11,6 +11,7 @@
     require_once '../App/Controllers/AuthController.php';
     
     require_once './volunteer_registration_panel.php';
+    require_once './volunteer_registration_success_panel.php';
     
     set_page_title('Volunteer Registration');
 
@@ -37,7 +38,13 @@
 
 <body>
     <div class='w-full h-[100vh] flex items-center justify-center'>
-        <?= VolunteerRegistrationPanel(); ?>
+        <?php
+            if (isset($_GET['status']) && $_GET['status'] == 'success') {
+                VolunteerRegistrationSuccessPanel();
+            } else {
+                VolunteerRegistrationPanel();
+            }
+        ?>
     </div>
 </body>
 </html>

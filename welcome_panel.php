@@ -25,7 +25,7 @@
                 <?= ButtonStart(id: 'register', button_class: 'primary'); ?>
                     <a href='./volunteer_registration'>Become a Volunteer</a>
                 <?= ButtonEnd(); ?>
-                <?= ButtonStart(id: 'sign_in', button_class: 'link'); ?>
+                <?= ButtonStart(id: 'sign_in', button_class: 'link-primary'); ?>
                     <a href='./sign_in'>Sign in as Admin</a>
                 <?= ButtonEnd(); ?>
             </div>

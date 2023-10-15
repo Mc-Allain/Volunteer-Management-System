@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 20, 2023 at 02:26 PM
+-- Generation Time: Oct 15, 2023 at 03:10 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -44,7 +44,7 @@ CREATE TABLE `administrators` (
 -- Dumping data for table `administrators`
 --
 
-INSERT INTO `administrators` VALUES
+INSERT INTO `administrators` (`id`, `last_name`, `first_name`, `username`, `password`, `role`, `date_created`, `date_updated`) VALUES
 (1, 'Sagara', 'Makoto Aizen', 'sagara.ma', 'be7ae849b480b15e05a8c14eec9e0723', 'Super Admin', '2023-08-18 09:33:25', '2023-08-18 09:33:25'),
 (2, 'Sample Last Name', 'Sample First Name', 'default_user', '4656fd365a7b2a27efb7530bca9b9cf1', 'Regular Admin', '2023-08-29 03:52:14', '2023-08-29 03:52:14');
 
@@ -81,7 +81,7 @@ CREATE TABLE `emergencies` (
 -- Dumping data for table `emergencies`
 --
 
-INSERT INTO `emergencies` VALUES
+INSERT INTO `emergencies` (`id`, `label`, `description`, `barangay`, `city`, `message`, `date_created`, `date_updated`) VALUES
 (1, 'No Emergency Label', NULL, 'No Barangay', 'No City', 'Emergency Alert', '2023-09-20 07:27:09', '2023-09-20 07:27:09'),
 (2, 'No Emergency Label', NULL, 'No Barangay', 'No City', 'Emergency Alert', '2023-09-20 07:29:06', '2023-09-20 07:29:06'),
 (3, 'No Emergency Label', NULL, 'No Barangay', 'No City', 'Emergency Alert', '2023-09-20 07:29:27', '2023-09-20 07:29:27');
@@ -102,7 +102,7 @@ CREATE TABLE `emergency_volunteers` (
 -- Dumping data for table `emergency_volunteers`
 --
 
-INSERT INTO `emergency_volunteers` VALUES
+INSERT INTO `emergency_volunteers` (`id`, `emergency_id`, `volunteer_id`) VALUES
 (1, 1, 1);
 
 -- --------------------------------------------------------
@@ -113,13 +113,13 @@ INSERT INTO `emergency_volunteers` VALUES
 
 CREATE TABLE `volunteers` (
   `id` int(11) NOT NULL,
-  `last_name` varchar(64) NOT NULL DEFAULT 'No Last Name',
-  `first_name` varchar(64) NOT NULL DEFAULT 'No First Name',
+  `last_name` varchar(32) NOT NULL DEFAULT 'No Last Name',
+  `first_name` varchar(32) NOT NULL DEFAULT 'No First Name',
   `barangay` varchar(32) NOT NULL DEFAULT 'No Barangay',
   `city` varchar(32) NOT NULL DEFAULT 'No City',
   `mobile_number` varchar(11) NOT NULL DEFAULT '0',
   `mobile_number_alt` varchar(11) NOT NULL DEFAULT '0',
-  `email_address` varchar(64) NOT NULL DEFAULT 'No Email Address',
+  `email_address` varchar(32) NOT NULL DEFAULT 'No Email Address',
   `date_created` timestamp NOT NULL DEFAULT current_timestamp(),
   `date_updated` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
@@ -128,8 +128,8 @@ CREATE TABLE `volunteers` (
 -- Dumping data for table `volunteers`
 --
 
-INSERT INTO `volunteers` VALUES
-(1, 'Sagara', 'Makoto Aizen', 'Shibuya Ku', 'Tokyo Shi', '09123456789', '09123456789', 'aizen.no.testing.server@gmail.com', '2023-09-20 04:04:22', '2023-09-20 04:04:22'),
+INSERT INTO `volunteers` (`id`, `last_name`, `first_name`, `barangay`, `city`, `mobile_number`, `mobile_number_alt`, `email_address`, `date_created`, `date_updated`) VALUES
+(1, 'Sagara', 'Makoto Aizen', 'Shibuya Ku', 'Tokyo Shi', '09123456789', '09123456789', 'aizen.no.testing.server@gmail.co', '2023-09-20 04:04:22', '2023-09-20 04:04:22'),
 (2, 'No Last Name', 'No First Name', 'No Barangay', 'No City', '0', '0', 'No Email Address', '2023-09-20 12:02:33', '2023-09-20 12:02:33');
 
 --

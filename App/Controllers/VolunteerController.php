@@ -76,25 +76,20 @@
             $alt_mobile_number = $request['alt_mobile_number'];
             $email_address = $request['email_address'];
 
-            $query = 'INSERT INTO volunteers
-                    VALUES (
-                        null, :last_name, :first_name,
-                        :barangay, :city,
-                        :mobile_number, :alt_mobile_number, :email_address,
-                        DEFAULT, DEFAULT
-                    )';
+            $values = [
+                'DEFAULT', 
+                [$last_name], 
+                [$first_name],
+                [$barangay], 
+                [$city],
+                [$mobile_number], 
+                [$alt_mobile_number],
+                [$email_address], 
+                'DEFAULT', 
+                'DEFAULT'
+            ];
 
-            $this->start_statement($query);
-            
-            $this->bind_value(":last_name", $last_name);
-            $this->bind_value(":first_name", $first_name);
-            
-            $this->bind_value(":barangay", $barangay);
-            $this->bind_value(":city", $city);
-            
-            $this->bind_value(":mobile_number", $mobile_number);
-            $this->bind_value(":alt_mobile_number", $alt_mobile_number);
-            $this->bind_value(":email_address", $email_address);
+            $this->create_insert_query('volunteers', $values);
 
             $this->execute();
 
