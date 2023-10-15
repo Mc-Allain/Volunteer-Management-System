@@ -12,7 +12,7 @@
 
     require_once '../Components/navigations.php';
     
-    set_page_title('About');
+    set_page_title('Messaging');
 
     if (!isset($_SESSION['user_id'])) {
         redirect('../sign_in');
@@ -32,6 +32,10 @@
 
 <body>
     <?= Sidebar(); ?>
-    <?= NavHeader(title: 'About'); ?>
+    <?= NavHeaderStart(title: 'Messaging', class: 'justify-between items-center'); ?>
+        <div class='text-sm border-l border-l-gray-300 h-full pl-3 flex items-center'>
+            Hello, <?= $user['first_name'] ?>
+        </div>
+    <?= NavHeaderEnd(); ?>
 </body>
 </html>

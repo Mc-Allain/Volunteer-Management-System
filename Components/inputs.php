@@ -76,7 +76,7 @@
         <button 
             type=<?= $type ?> 
             id=<?= $id ?> 
-            class='flex gap-2 justify-center items-center font-medium py-2 px-4 rounded-md text-sm focus:outline-none <?= $color_class ?> <?= $class ?>'
+            class='w-full flex gap-2 justify-center items-center font-medium py-2 px-4 rounded-md text-sm focus:outline-none <?= $color_class ?> <?= $class ?>'
         > <?php
                 if (!empty($icon)) { ?>
                     <i class='fas fa-<?= $icon ?> text-white'></i> <?php
@@ -105,11 +105,19 @@
         <button 
             type=<?= $type ?> 
             id=<?= $id ?> 
-            class='flex gap-2 justify-center items-center font-medium py-2 px-4 rounded-md text-sm focus:outline-none <?= $color_class ?> <?= $class ?>'
+            class='w-full flex gap-2 justify-center items-center font-medium py-2 px-4 rounded-md text-sm focus:outline-none <?= $color_class ?> <?= $class ?>'
         > <?php
     }
 
     function ButtonEnd() { ?> 
         </button> <?php
+    }
+
+    function LinkStart($url = '#', $class = '') { ?>
+        <a href='<?= $url ?>' class='w-full <?= $class ?>' > <?php
+    }
+
+    function LinkEnd() { ?> 
+        </a> <?php
     }
 ?>

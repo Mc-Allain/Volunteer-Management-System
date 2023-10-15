@@ -21,9 +21,9 @@
                 <div class='flex flex-col justify-evenly items-center flex-grow px-5'>
                     <?= SuccessAlert(content: 'You\'ve successfully registered a volunteer.', class: 'w-full'); ?>
 
-                    <?= ButtonStart(id: 'done', button_class: 'primary', class: 'w-fit'); ?>
-                        <a href='../'>Done</a>
-                    <?= ButtonEnd(); ?>
+                    <?= LinkStart(url: '../', class: '!w-fit'); ?>
+                        <?= Button(id: 'done', label: 'Done', button_class: 'primary'); ?>
+                    <?= LinkEnd(); ?>
                 </div>
             </div>
         </div> <?php

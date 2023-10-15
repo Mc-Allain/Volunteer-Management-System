@@ -35,9 +35,9 @@
                     
                     <?= Button(id: 'sign_in', type:'submit', label: 'Sign in', button_class: 'primary'); ?>
                     
-                    <?= ButtonStart(id: 'cancel', button_class: 'link-primary'); ?>
-                        <a href='../'>Cancel</a>
-                    <?= ButtonEnd(); ?>
+                    <?= LinkStart(url: '../'); ?>
+                        <?= Button(id: 'cancel', label: 'Cancel', button_class: 'link'); ?>
+                    <?= LinkEnd(); ?>
                 </form>
             </div>
         </div> <?php

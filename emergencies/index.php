@@ -31,7 +31,7 @@
 ?>
 
 <body>
-    <?= Sidebar(title: 'Volunteer Management System', abbr: 'VMS', selected_index: 2); ?>
+    <?= Sidebar(); ?>
     <?= NavHeaderStart(title: 'Emergencies', class: 'justify-between items-center'); ?>
         <div class='text-sm border-l border-l-gray-300 h-full pl-3 flex items-center'>
             Hello, <?= $user['first_name'] ?>

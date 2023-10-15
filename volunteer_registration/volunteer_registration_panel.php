@@ -103,11 +103,11 @@
                     </div>
 
                     <div class='flex justify-between px-5'>
-                        <?= ButtonStart(id: 'cancel', button_class: 'link-danger'); ?>
-                            <a href='../'>Cancel</a>
-                        <?= ButtonEnd(); ?>
+                        <?= LinkStart(url: '../', class: '!w-fit'); ?>
+                            <?= Button(id: 'cancel', label: 'Cancel', button_class: 'link-danger'); ?>
+                        <?= LinkEnd(); ?>
                     
-                        <?= Button(id: 'sign_in', type:'submit', label: 'Submit Registration', button_class: 'primary'); ?>
+                        <?= Button(id: 'sign_in', type:'submit', label: 'Submit Registration', button_class: 'primary', class: '!w-fit'); ?>
                     </div>
                 </form>
             </div>

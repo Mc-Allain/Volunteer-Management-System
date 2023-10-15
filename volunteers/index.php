@@ -12,6 +12,7 @@
     require_once '../App/Controllers/VolunteerController.php';
 
     require_once '../Components/navigations.php';
+    require_once '../Components/inputs.php';
     require_once '../Components/data_container.php';
     
     set_page_title('Volunteers');
@@ -43,24 +44,29 @@
 ?>
 
 <body>
-    <?= Sidebar(title: 'Volunteer Management System', abbr: 'VMS', selected_index: 1); ?>
+    <?= Sidebar(); ?>
     <?= NavHeaderStart(title: 'Volunteers', class: 'justify-between items-center'); ?>
         <div class='text-sm border-l border-l-gray-300 h-full pl-3 flex items-center'>
             Hello, <?= $user['first_name'] ?>
         </div>
     <?= NavHeaderEnd(); ?>
 
-    <?= NavContentStart(class: 'p-4'); ?>
-        <div>
-            <?= DataTables(
-                    id: 'volunteers-table', 
-                    class: 'cell-border compact hover order-column row-border stripe', 
-                    columns: $volunteer_fields, 
-                    data: $volunteers,
-                    column_definitions: $volunteer_field_definitions,
-                    column_sorting: $volunteer_field_sorting,
-                ); ?>
+    <?= NavContentStart(class: 'p-4 flex flex-col gap-3'); ?>
+    
+        <div class='flex gap-2'>
+            <a href='../messaging/'>
+                <?= Button(id: 'send_emergency_message', label: 'Send Emergency Message',  button_class: 'primary'); ?>
+            </a>
         </div>
+
+        <?= DataTables(
+            id: 'volunteers-table', 
+            class: 'cell-border compact hover order-column row-border stripe', 
+            columns: $volunteer_fields, 
+            data: $volunteers,
+            column_definitions: $volunteer_field_definitions,
+            column_sorting: $volunteer_field_sorting,
+        ); ?>
     <?= NavContentEnd(); ?>
 
     <script>

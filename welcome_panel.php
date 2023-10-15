@@ -11,23 +11,14 @@
                 <div class='text-center font-medium uppercase text-[22px]'>Volunteer Management System</div>
             </div>
 
-            <div class='mt-3 pt-3 border-t border-t-gray-300 flex flex-col gap-2'> <?php
-                if (isset($_GET['credentials'])) {
-                    $get_credentials = $_GET['credentials'];
+            <div class='mt-3 pt-3 border-t border-t-gray-300 flex flex-col gap-2'>
+                <?= LinkStart(url: './volunteer_registration'); ?>
+                    <?= Button(id: 'register', label: 'Become a Volunteer', button_class: 'primary'); ?>
+                <?= LinkEnd(); ?>
 
-                    if ($get_credentials == 'incomplete') {
-                        DangerAlert(content: 'Please enter your account');
-                    } else if ($get_credentials == 'incorrect') {
-                        DangerAlert(content: 'Incorrect username or password');
-                    }
-                } ?>
-                
-                <?= ButtonStart(id: 'register', button_class: 'primary'); ?>
-                    <a href='./volunteer_registration'>Become a Volunteer</a>
-                <?= ButtonEnd(); ?>
-                <?= ButtonStart(id: 'sign_in', button_class: 'link-primary'); ?>
-                    <a href='./sign_in'>Sign in as Admin</a>
-                <?= ButtonEnd(); ?>
+                <?= LinkStart(url: './sign_in'); ?>
+                    <?= Button(id: 'sign_in', label: 'Sign in as Admin', button_class: 'link-primary'); ?>
+                <?= LinkEnd(); ?>
             </div>
         </div> <?php
     }
